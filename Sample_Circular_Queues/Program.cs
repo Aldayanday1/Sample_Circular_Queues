@@ -35,5 +35,30 @@ namespace CircularQueues_CSharp
                     /*If REAR is not at the last position, then its value is incremend by one.  */
                     REAR = REAR + 1;
             }
-    }
+            public void remove()
+            {
+                /* Checks whether the queue is empty. */
+                if (FRONT == -1)
+                {
+                    Console.WriteLine("Queue underflow\n");
+                    return;
+                }
+                Console.WriteLine("\nThe element deleted from the queue is: " + queue_array[FRONT] + "\n");
+                /* Checks if the queue has one element */
+                if (FRONT == REAR)
+                {
+                    FRONT = -1;
+                    REAR = -1;
+                }
+                else
+                {
+                    /* If the element to be deleted is at the last position of the array, then the value of FRONT is set to 0 i.e to the first element of the array. */
+                    if (FRONT == max - 1)
+                        FRONT = 0;
+                    else
+                        /* FRONT is incremented by one if it is not the first element of array. */
+                        FRONT = FRONT + 1;
+                }
+            }
+        }
 }
